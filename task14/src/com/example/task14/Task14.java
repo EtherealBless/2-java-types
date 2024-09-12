@@ -4,13 +4,16 @@ public class Task14 {
 
 
     public static int reverse(int value) {
-        String strNum = Integer.toString(value);
 
-        if (strNum.length() > 0) {
-            return Integer.parseInt(new StringBuilder(strNum).reverse().toString());
+        int res = 0;
+        if (value < 0) {
+            value = value * -1;
         }
-
-        return 0;
+        while (value > 0) {
+            res = res * 10 + value % 10;
+            value = value / 10;
+        }
+        return res;
     }
 
     public static void main(String[] args) {

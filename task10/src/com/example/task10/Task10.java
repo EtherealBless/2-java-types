@@ -4,11 +4,8 @@ public class Task10 {
 
     public static boolean compare(float a, float b, int precision) {
 
-        // if (Float.isNaN(a) && Float.isNaN(b)) {
-        //     return true;
-        // }
-        if (Float.isNaN(a) || Float.isNaN(b)) {
-            return false;                           // by standard, NaN is not equal to anything including NaN and +/-Infinity
+        if (Float.isNaN(a) && Float.isNaN(b)) {
+            return true;
         }
         if (Float.isInfinite(a) || Float.isInfinite(b)) {
             return a == b;
